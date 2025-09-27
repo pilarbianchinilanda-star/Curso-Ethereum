@@ -1,6 +1,27 @@
-# Curso-Ethereum
-# Hola, soy Pilar Bianchini
+KipuBank
 
-Soy estudiante de 4.º año de Ingeniería Informática . Todavía no tengo mucha experiencia como desarrolladora ni en Web3, pero me entusiasma aprender y descubrir todo lo que este mundo ofrece.  
+KipuBank es un contrato inteligente en Solidity que permite a los usuarios depositar y retirar ETH de una bóveda personal, con límites de seguridad.
 
-Con este curso quiero sumar nuevas habilidades y empezar a construir una base que me permita crecer como profesional. Mi objetivo es pasar de la curiosidad al aprendizaje real y, en un futuro, poder aportar a proyectos innovadores.  
+Descripción
+
+- Los usuarios pueden depositar ETH en su bóveda personal.  
+- Se puede retirar ETH hasta un límite fijo por transacción.  
+- Existe un límite global de depósitos establecido al desplegar el contrato.  
+- El contrato registra el número de depósitos y retiros.  
+- Se emiten eventos en cada operación exitosa.  
+
+
+Despliegue
+
+1. Compilar el contrato en **Remix IDE** (https://remix.ethereum.org/).  
+2. Seleccionar la red de prueba (por ejemplo, Sepolia Testnet).  
+3. Configurar una wallet (como MetaMask) con ETH de prueba.  
+4. Desplegar el contrato indicando:
+   - `bankCap` → límite global de depósitos.  
+   - `maxWithdrawPerTx` → límite de retiro por transacción.  
+
+Uso
+
+- Depositar ETH:
+  ```solidity
+  kipuBank.deposit{value: 1 ether}();
